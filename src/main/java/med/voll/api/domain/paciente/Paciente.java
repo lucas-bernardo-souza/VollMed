@@ -34,4 +34,23 @@ public class Paciente {
         this.telefone = dadosPaciente.telefone();
         this.endereco = new Endereco(dadosPaciente.endereco());
     }
+
+    public void atualizarInformacoes(@Valid DadosAtualizacaoPaciente dados) {
+        if(dados.nome() != null){
+            this.nome = dados.nome();
+        }
+        if(dados.email() != null){
+            this.email = dados.email();
+        }
+        if(dados.telefone() != null){
+            this.telefone = dados.telefone();
+        }
+        if(dados.endereco() != null){
+            this.endereco.atualizarInformacoes(dados.endereco());
+        }
+    }
+
+    public void excluir(){
+        this.ativo = false;
+    }
 }
