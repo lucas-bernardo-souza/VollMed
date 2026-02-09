@@ -1,5 +1,6 @@
 package med.voll.api.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import med.voll.api.domain.medico.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RestController
 // Mapeando a URL /medicos
 @RequestMapping("medicos")
+// Notação do Swagger para passagem de token na requisição
+@SecurityRequirement(name = "bearer-key")
 public class MedicoController {
     /*
         A anotação AutoWired fará a injeção de dependências

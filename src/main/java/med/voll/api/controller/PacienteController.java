@@ -1,5 +1,7 @@
 package med.voll.api.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import med.voll.api.domain.paciente.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,8 @@ import java.util.List;
 @RestController
 // Mapeando endereço /pacientes
 @RequestMapping("pacientes")
+// Notação do Swagger para passagem de token na requisição
+@SecurityRequirement(name = "bearer-key")
 public class PacienteController {
     // Persistência no banco de dados
     @Autowired
