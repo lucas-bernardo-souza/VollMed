@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.time.LocalDateTime;
 
 public interface MedicoRepository extends JpaRepository<Medico, Long> {
+    // Padrão de nomenclatura do Spring Data
     Page<Medico> findAllByAtivoTrue(Pageable paginacao);
 
     @Query("""
